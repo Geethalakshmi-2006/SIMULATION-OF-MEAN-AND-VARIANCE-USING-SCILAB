@@ -32,6 +32,7 @@ To write a program for mean, variance and cross correlation in SCILAB and verify
 
 
 ## PROGRAM
+~~~
 clear; clc; clear;
 
 function X = f(x)
@@ -79,6 +80,7 @@ n1 = max(size(y)) - 1;
 n2 = max(size(x)) - 1;
 r = corr(x, y, n1);
 plot2d3('gnn', r);
+~~~
 ## CALCULATION
 ![WhatsApp Image 2025-11-18 at 19 32 47_56712106](https://github.com/user-attachments/assets/451f5bc8-b88b-4c49-bf21-f0089e6fb937)
 ![WhatsApp Image 2025-11-18 at 19 33 01_878beabc](https://github.com/user-attachments/assets/1d71678a-a7c1-4c78-b273-e6b603a8e86f)
