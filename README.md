@@ -32,9 +32,59 @@ To write a program for mean, variance and cross correlation in SCILAB and verify
 
 
 ## PROGRAM
+clear; clc; clear;
 
+function X = f(x)
+    z = 3 * (1 - x)^2;
+    X = x * z;
+endfunction
+
+a = 0;
+b = 1;
+EX = intg(a, b, f);
+
+function Y = c(y)
+    z = 3 * (1 - y)^2;
+    Y = y * z;
+endfunction
+
+EY = intg(a, b, c);
+
+disp(EX, "i)Mean of X =");
+disp(EY, "Mean of Y =");
+
+function X = g(x)
+    z = 3 * (1 - x)^2;
+    X = x^2 * z;
+endfunction
+
+EX2 = intg(a, b, g);
+
+function Y = h(y)
+    z = 3 * (1 - y)^2;
+    Y = y^2 * z;
+endfunction
+
+EY2 = intg(a, b, h);
+
+vX2 = EX2 - (EX)^2;
+vY2 = EY2 - (EY)^2;
+
+disp(vX2, "ii)Variance of X");
+disp(vY2, "Variance of Y");
+
+x = input("type in the reference sequence=");
+y = input("type in the second sequence=");
+n1 = max(size(y)) - 1;
+n2 = max(size(x)) - 1;
+r = corr(x, y, n1);
+plot2d3('gnn', r);
 ## CALCULATION
+![WhatsApp Image 2025-11-18 at 19 32 47_56712106](https://github.com/user-attachments/assets/451f5bc8-b88b-4c49-bf21-f0089e6fb937)
+![WhatsApp Image 2025-11-18 at 19 33 01_878beabc](https://github.com/user-attachments/assets/1d71678a-a7c1-4c78-b273-e6b603a8e86f)
 
 ## OUTPUT
+<img width="660" height="542" alt="image" src="https://github.com/user-attachments/assets/df1fcf8f-b1f2-4bfc-9349-a3bb549ed2a5" />
 
 ## RESULT
+Thus the mean , variance and cross correlation are executed in Scilab and output is verified.
